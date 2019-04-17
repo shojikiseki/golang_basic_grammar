@@ -1,8 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+// 【基本的な関数】
+// ---------------------------------------------------------------
+// 基本ケース
+// func hoge() {
+// 	処理
+// 	処理
+// }
 
 // 初期設定などで使うケースが多い
 // func init() {
@@ -10,6 +14,7 @@ import (
 // }
 
 // 【出力(fmt)】
+// ---------------------------------------------------------------
 // func bazz() {
 // 	fmt.Println("Bazz")
 // }
@@ -23,33 +28,65 @@ import (
 // }
 
 // 【os/user, time】
+// ---------------------------------------------------------------
 // func main() {
 // 	fmt.Println("Hello world!", time.Now())
 // 	fmt.Println(user.Current())
 // }
 
+// 【変数宣言】
+// ---------------------------------------------------------------
+// varの形式であれば関数外でも使用可
+// var (
+// 	i    int     = 1
+// 	f64  float64 = 1.2
+// 	s    string  = "hello!"
+// 	t, f bool    = true, false
+// )
+
+// 変数宣言の省略形
+// ※省略する場合は関数内でのみ使用可
+// func foo() {
+// 	xi := 1
+// 	var xf32 float32 = 1.2
+// 	xs := "hello!"
+// 	xt, xf := true, false
+// 	fmt.Println(xi, xf32, xs, xt, xf)
+// 	fmt.Printf("%T\n", xf32)
+// 	fmt.Printf("%T\n", xi)
+// }
+
 // 【変数代入】
-func main() {
-	// 値を入れなかった場合は初期値が入力される
-	// var (
-	// 	i    int
-	// 	f64  float64
-	// 	s    string
-	// 	t, f bool
-	// )
+// func main() {
+// 値を入れなかった場合は初期値が入力される
+// var (
+// 	i    int
+// 	f64  float64
+// 	s    string
+// 	t, f bool
+// )
 
-	var (
-		i    int     = 1
-		f64  float64 = 1.2
-		s    string  = "hello!"
-		t, f bool    = true, false
-	)
-	fmt.Println(i, f64, s, t, f)
+// 	fmt.Println(i, f64, s, t, f)
+// 	foo()
+// }
 
-	// 変数宣言の省略形
-	xi := 1
-	xf64 := 1.2
-	xs := "hello!"
-	xt, xf := true, false
-	fmt.Println(xi, xf64, xs, xt, xf)
-}
+// 【const（不変変数）】
+// ---------------------------------------------------------------
+// const Pi = 3.14
+// const (
+// 	Username = "test user"
+// 	Password = "test pass"
+// )
+
+// overflowした場合は出力時に -1 してもダメ
+// var big int = 9223372036854775807 + 1
+// ただしconstの場合はoverflowでも大丈夫
+// const big = 9223372036854775807 + 1
+
+// func main() {
+// 	fmt.Println(Pi, Username, Password)
+// 	fmt.Println(big - 1)
+// }
+
+// 【数値型】
+// ---------------------------------------------------------------
